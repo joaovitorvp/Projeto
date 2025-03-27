@@ -42,9 +42,9 @@ public class ArduinoSerialReader extends JFrame {
                 String[] valores = SimuladorArduino.leitura();
 
                 SwingUtilities.invokeLater(() -> {
-                    lblTemperatura.setText("Temperatura: " + valores[0]);
-                    lblUmidade.setText("Umidade: " + valores[1]);
-                    lblLuminosidade.setText("Luminosidade: " + valores[2]);
+                    lblTemperatura.setText("Temperatura: " + valores[0]+"ºC");
+                    lblUmidade.setText("Umidade: " + valores[1]+"%");
+                    lblLuminosidade.setText("Luminosidade: " + valores[2]+"%");
                 });
 
                 try {
