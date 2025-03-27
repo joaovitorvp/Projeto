@@ -12,7 +12,6 @@ public class ArduinoSerialReader extends JFrame {
     private volatile boolean lendo = false;
 
     public ArduinoSerialReader() {
-        // Configurar a interface gráfica
         setTitle("Monitor de Arduino - Temperatura, Umidade, Luminosidade");
         setLayout(new FlowLayout());
         setSize(300, 200);
@@ -26,7 +25,6 @@ public class ArduinoSerialReader extends JFrame {
         add(lblUmidade);
         add(lblLuminosidade);
 
-        // Botão para iniciar leitura da porta serial
         JButton btnIniciar = new JButton("Iniciar Leitura");
         btnIniciar.addActionListener(e -> iniciarLeitura());
         add(btnIniciar);
@@ -43,7 +41,6 @@ public class ArduinoSerialReader extends JFrame {
             while (lendo) { 
                 String[] valores = SimuladorArduino.leitura();
 
-                // Atualizar a interface gráfica
                 SwingUtilities.invokeLater(() -> {
                     lblTemperatura.setText("Temperatura: " + valores[0]);
                     lblUmidade.setText("Umidade: " + valores[1]);
